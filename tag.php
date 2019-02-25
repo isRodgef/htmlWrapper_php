@@ -30,11 +30,14 @@ class tag
 	private $closingTag;
 	private $attr_dict = [];
 	private $to_str = '';
+	private $tag_arr = []
 	public function __construct($name,$hasCloseTag){
 		$this->OpeningTag = "<" .$name.">";
 		$this->to_str = $this->to_str. $this->OpeningTag;
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
+	}
+	public function add_body(){
 	}
 	public function set_attr($attr){
 		$this->attr_dict = $attr;
