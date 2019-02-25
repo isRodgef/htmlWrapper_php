@@ -29,23 +29,25 @@ class tag
 	private $OpeningTag;
 	private $closingTag;
 	private $attr_dict = [];
+	private $to_str = '';
 	public function __construct($name,$hasCloseTag){
 		$this->OpeningTag = "<" .$name.">";
+		$this->to_str = $this->to_str. $this->OpeningTag;
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
 	}
 	public function set_attr($attr){
 		$this->attr_dict = $attr;
-	}	
-	public function display(){
-		$ret = $this->OpeningTag;;
 		$tmp = '';
 		foreach ($this->attr_dict as $key  => $value) {
 			$tmp = ($key . "=" . $value);
 		}
+		$this->to_str = $this->to_str . $tmp;
 		
-		$ret = ($ret .$tmp .$this->closingTag);
-		return $ret; 
+	}	
+	public function display(){
+		return $this->to_str . $this->closingTag;
+		 
 	}
 	public function __destruct()
 	{
