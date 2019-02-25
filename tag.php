@@ -24,19 +24,28 @@
 
 define("NEWLINE", "<br>" ); 
 
-class tagGenerator
+class tag
 {
 	private $OpeningTag;
 	private $closingTag;
-	public function __construct($name,$hasCloseTag)
-	{
+	private $attr_dict = [];
+	public function __construct($name,$hasCloseTag){
 		$this->OpeningTag = "<" .$name.">";
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
 	}
-	public function display()
-	{
-		return $this->OpeningTag . $this->closingTag;
+	public function set_attr($attr){
+		$this->attr_dict = $attr;
+	}	
+	public function display(){
+		$ret = $this->OpeningTag;;
+		$tmp = '';
+		foreach ($this->attr_dict as $key  => $value) {
+			$tmp = ($key . "=" . $value);
+		}
+		
+		$ret = ($ret .$tmp .$this->closingTag);
+		return $ret; 
 	}
 	public function __destruct()
 	{
@@ -44,7 +53,9 @@ class tagGenerator
 
 }
 
-$val = new tagGenerator("p",false);
+$val = new tag("input",true);
+$val->set_attr(array("type"=>"password"));
+
 
 echo $val->display();
 

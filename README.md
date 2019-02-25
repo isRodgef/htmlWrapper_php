@@ -1,7 +1,7 @@
 # htmlWrapper_php
 html wrapper in php 
 
-Basically I tired  of having php code that look liked this
+Basically I was tired  of having php code that look liked this
   ~~~
     <body>
     <?php
