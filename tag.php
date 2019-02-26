@@ -52,6 +52,8 @@ class tag
 		return $this->to_str . $this->closingTag;
 		 
 	}
+	public function commit(){
+	}
 	public function __destruct()
 	{
 	}
@@ -60,6 +62,7 @@ class tag
 
 $val = new tag("input",true);
 $val->set_attr(array("type"=>"password"));
+$val->commit();
 
 
 echo $val->display();
