@@ -30,9 +30,9 @@ class tag
 	private $closingTag;
 	private $attr_dict = [];
 	private $to_str = '';
-	private $tag_arr = []
+	private $tag_arr = [];
 	public function __construct($name,$hasCloseTag){
-		$this->OpeningTag = "<" .$name.">";
+		$this->OpeningTag = "<" .$name;
 		$this->to_str = $this->to_str. $this->OpeningTag;
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
@@ -41,18 +41,17 @@ class tag
 	}
 	public function set_attr($attr){
 		$this->attr_dict = $attr;
-		$tmp = '';
-		foreach ($this->attr_dict as $key  => $value) {
-			$tmp = ($key . "=" . $value);
-		}
-		$this->to_str = $this->to_str . $tmp;
-		
 	}	
 	public function display(){
 		return $this->to_str . $this->closingTag;
 		 
 	}
 	public function commit(){
+		$tmp = '';
+			foreach ($this->attr_dict as $key  => $value) {
+				$tmp = ($key . "=" . $value);
+		}
+		$this->to_str = $this->to_str . " " .$tmp . ">";
 	}
 	public function __destruct()
 	{
