@@ -25,7 +25,7 @@ New possible syntax (will likely change)
    ~~~
 
 	ouput should be
-	~~~
+	
     <body>s</body>
     
    ~~~
