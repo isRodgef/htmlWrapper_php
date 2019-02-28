@@ -40,7 +40,7 @@ class tag
 	}
 	public function add_body($text, $type=false){
 		//if (type)
-		array_push($this->body array("F"=>$text));
+		array_push($this->body,array("F",$text));
 	}
 	public function add_attr($attr){
 		array_push($this->attr_dict,$attr);
@@ -70,7 +70,7 @@ class tag
 					$tmp = ($key . "=" . $value);
 			}
 		}
-		$len2  strlen($this->body)
+		$len2 =  count($this->body);
 		for ($i =0; $i < $len2; $i++){	
 			$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i];
 		}
