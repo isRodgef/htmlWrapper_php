@@ -31,15 +31,16 @@ class tag
 	private $attr_dict = [];
 	private $to_str = '';
 	private $tag_arr = [];
-	private $body = "";
+	private $body = [];
 	public function __construct($name,$hasCloseTag){
 		$this->OpeningTag = "<" .$name;
 		
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
 	}
-	public function add_body($text){
-		$this->body =$text;
+	public function add_body($text, $type=false){
+		//if (type)
+		array_push($this->body array("F"=>$text));
 	}
 	public function add_attr($attr){
 		array_push($this->attr_dict,$attr);
@@ -69,8 +70,12 @@ class tag
 					$tmp = ($key . "=" . $value);
 			}
 		}
-		$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body;
+		$len2  strlen($this->body)
+		for ($i =0; $i < $len2; $i++){	
+			$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i];
+		}
 	}
+	
 	public function __destruct()
 	{
 	}
