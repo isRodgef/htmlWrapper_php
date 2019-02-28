@@ -35,5 +35,12 @@ $val->rm_attr(array("type"=>"password"));
 $val->commit();
 echo $val->display();
 
+$var->add_body("lalal");
+$var->commit();
+$val->add_body($var);
+$var->commit();
+echo $val->display();
+echo $var->display();
+
 ?>
 
