@@ -29,3 +29,5 @@ New possible syntax (will likely change)
     <body>s</body>
     
    ~~~
+   
+TODO add basic usage example
