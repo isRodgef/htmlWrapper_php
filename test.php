@@ -29,18 +29,19 @@ $val = new tag("input",true);
 $val->add_attr(array("type"=>"password"));
 $val->add_body("Loser");
 $val->commit();
-echo $val->display();
+//echo $val->display();
 echo "\n";
 $val->rm_attr(array("type"=>"password"));
 $val->commit();
-echo $val->display();
+//echo $val->display();
 
 $var->add_body("lalal");
 $var->commit();
-$val->add_body($var);
-$var->commit();
+$val->add_body($var,true);
+$val->commit();
+echo "\n";
 echo $val->display();
-echo $var->display();
+//echo $var->display();
 
 ?>
 

@@ -49,6 +49,7 @@ class tag
 		array_push($this->attr_dict,$attr);
 	}	
 	public function display(){
+		print_r($this->body);
 		return $this->to_str . $this->closingTag;
 		 
 	}
