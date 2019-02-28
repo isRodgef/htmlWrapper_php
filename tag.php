@@ -60,12 +60,5 @@ class tag
 	}
 
 }
-$val = new tag("input",true);
-$val->set_attr(array("type"=>"password"));
-$val->add_body("Loser");
-$val->commit();
-
-
-echo $val->display();
 
 ?>
