@@ -19,7 +19,7 @@ New possible syntax (will likely change)
     $body = new Tag(body,true);
     $body->addText("s");
     $body->commit();
-    echo $body->display;
+    echo $body->display();
     
   
    ~~~
