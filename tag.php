@@ -39,8 +39,11 @@ class tag
 			$this->closingTag = "</".$name .">";
 	}
 	public function add_body($text, $type=false){
-		//if (type)
-		array_push($this->body,array("F",$text));
+		if (!$type)
+			array_push($this->body,array(false,$text));
+		else
+				array_push($this->body,array(true,$text));
+		
 	}
 	public function add_attr($attr){
 		array_push($this->attr_dict,$attr);
@@ -72,7 +75,8 @@ class tag
 		}
 		$len2 =  count($this->body);
 		for ($i =0; $i < $len2; $i++){	
-			$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i];
+			if (!$this->body[$i][0])
+				$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i][0];
 		}
 	}
 	
