@@ -24,6 +24,7 @@
  
 require("tag.php");
 
+$var = new tag("p",true);
 $val = new tag("input",true);
 $val->add_attr(array("type"=>"password"));
 $val->add_body("Loser");
