@@ -34,24 +34,40 @@ class tag
 	private $body = "";
 	public function __construct($name,$hasCloseTag){
 		$this->OpeningTag = "<" .$name;
-		$this->to_str = $this->to_str. $this->OpeningTag;
+		
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
 	}
 	public function add_body($text){
 		$this->body =$text;
 	}
-	public function set_attr($attr){
-		$this->attr_dict = $attr;
+	public function add_attr($attr){
+		array_push($this->attr_dict,$attr);
 	}	
 	public function display(){
 		return $this->to_str . $this->closingTag;
 		 
 	}
+	
+	public function rm_attr($attr){
+			$len = count($this->attr_dict); 
+			for ($j=0;$j < $len;$j++)
+			{
+				if( $this->attr_dict[$j] == $attr)
+					unset($this->attr_dict[$j]);
+			}
+			array_values($this->attr_dict);
+	}
+	
 	public function commit(){
 		$tmp = '';
-			foreach ($this->attr_dict as $key  => $value) {
-				$tmp = ($key . "=" . $value);
+		$len = count($this->attr_dict); 
+		$this->to_str = "";
+		$this->to_str = $this->to_str. $this->OpeningTag;
+		for($i =0; $i < $len; $i++){
+				foreach ($this->attr_dict[$i] as $key  => $value) {
+					$tmp = ($key . "=" . $value);
+			}
 		}
 		$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body;
 	}
