@@ -25,11 +25,13 @@
 require("tag.php");
 
 $val = new tag("input",true);
-$val->set_attr(array("type"=>"password"));
+$val->add_attr(array("type"=>"password"));
 $val->add_body("Loser");
 $val->commit();
-
-
+echo $val->display();
+echo "\n";
+$val->rm_attr(array("type"=>"password"));
+$val->commit();
 echo $val->display();
 
 ?>
