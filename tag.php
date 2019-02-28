@@ -31,13 +31,15 @@ class tag
 	private $attr_dict = [];
 	private $to_str = '';
 	private $tag_arr = [];
+	private $body = "";
 	public function __construct($name,$hasCloseTag){
 		$this->OpeningTag = "<" .$name;
 		$this->to_str = $this->to_str. $this->OpeningTag;
 		if ($hasCloseTag)
 			$this->closingTag = "</".$name .">";
 	}
-	public function add_body(){
+	public function add_body($text){
+		$this->body =$text;
 	}
 	public function set_attr($attr){
 		$this->attr_dict = $attr;
@@ -51,16 +53,16 @@ class tag
 			foreach ($this->attr_dict as $key  => $value) {
 				$tmp = ($key . "=" . $value);
 		}
-		$this->to_str = $this->to_str . " " .$tmp . ">";
+		$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body;
 	}
 	public function __destruct()
 	{
 	}
 
 }
-
 $val = new tag("input",true);
 $val->set_attr(array("type"=>"password"));
+$val->add_body("Loser");
 $val->commit();
 
 
