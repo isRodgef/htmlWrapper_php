@@ -16,7 +16,7 @@ The reason I disliked this was because I found it differentiate the php from htm
 New possible syntax (will likely change)
 
   ~~~
-    $body = new Tag(body,true);
+    $body = new Tag("body",true);
     $body->addText("s");
     $body->commit();
     echo $body->display();
