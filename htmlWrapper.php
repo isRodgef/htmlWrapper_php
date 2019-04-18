@@ -12,7 +12,6 @@
  $body = new Tag('body',true);
  
  $html->add_body($head,true);
-  $head->commit();
  $html->commit();
 
  echo $html->display();

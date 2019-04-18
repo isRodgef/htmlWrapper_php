@@ -76,8 +76,11 @@ class Tag
 		for ($i =0; $i < $len2; $i++){	
 			if (!$this->body[$i][0])
 				$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i][1];
-			else //($this->body[$i][0])
+			else
+			{ //($this->body[$i][0])
+				$this->body[$i][1]->commit();
 				$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i][1]->display();
+			}
 		}
 	}
 	
