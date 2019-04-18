@@ -11,9 +11,10 @@
  $head = new Tag('head',true);
  $body = new Tag('body',true);
  
-// $html->add_body($head,true);
+ $html->add_body($head,true);
+  $head->commit();
  $html->commit();
-/// $head->commit();
+
  echo $html->display();
 
 ?>
