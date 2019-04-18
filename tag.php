@@ -22,9 +22,8 @@
  * 
  */
 
-define("NEWLINE", "<br>" ); 
 
-class tag
+class Tag
 {
 	private $OpeningTag;
 	private $closingTag;
