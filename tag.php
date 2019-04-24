@@ -64,6 +64,7 @@ class Tag
 	
 	public function commit(){
 		$tmp = '';
+		
 		$len = count($this->attr_dict); 
 		$this->to_str = "";
 		$this->to_str = $this->to_str. $this->OpeningTag;
@@ -72,12 +73,13 @@ class Tag
 					$tmp = ($key . "=" . $value);
 			}
 		}
+		$this->to_str = $this->to_str . " " .$tmp . ">" ;
 		$len2 =  count($this->body);
 		for ($i =0; $i < $len2; $i++){	
 			if (!$this->body[$i][0])
-				$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i][1];
+				$this->to_str = $this->to_str . $this->body[$i][1];
 			else //($this->body[$i][0])
-				$this->to_str = $this->to_str . " " .$tmp . ">" . $this->body[$i][1]->display();
+				$this->to_str = $this->to_str . $this->body[$i][1]->display();
 		}
 	}
 	
