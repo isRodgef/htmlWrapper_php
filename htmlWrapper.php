@@ -13,16 +13,16 @@
  
  #$html->add_attr(array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"));
  #$html->add_body('asd',false);
- #$html->add_body($head,true);
- #$head->add_body('asd',false);
+ $head->add_body('asd',false);
+ $html->add_body($head,true);
  $head->commit();
- #$html->commit();
+ $html->commit();
 
 
   ###commit function not appending >
 
 
- echo $head->display();
- #echo $html->display();
+ #echo $head->display();
+ echo $html->display();
 
 ?>
