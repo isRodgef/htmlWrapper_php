@@ -11,12 +11,17 @@
  $head = new Tag('head',true);
  $body = new Tag('body',true);
  
- $html->add_attr(array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"));
- $html->add_body('asd',false);
+ #$html->add_attr(array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"));
+ #$html->add_body('asd',false);
  $html->add_body($head,true);
- $html->commit();
+ $head->commit();
+ #$html->commit();
 
 
- echo $html->display();
+  ###commit function not appending >
+
+
+ echo $head->display();
+ #echo $html->display();
 
 ?>
