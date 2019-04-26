@@ -80,10 +80,14 @@ class Tag
 		$this->to_str = $this->to_str . $tmp . ">" ;
 		$len2 =  count($this->body);
 		for ($i =0; $i < $len2; $i++){	
-			if (!$this->body[$i][0])
+			if (!$this->body[$i][0]){
 				$this->to_str = $this->to_str . $this->body[$i][1];
+			}
 			else //($this->body[$i][0])
+			{
+				$this>body[$i][1]->commit();
 				$this->to_str = $this->to_str . $this->body[$i][1]->display();
+			}
 		}
 	}
 	

@@ -15,7 +15,7 @@
  #$html->add_body('asd',false);
  $head->add_body('asd',false);
  $html->add_body($head,true);
- $head->commit();
+# $head->commit();
  $html->commit();
 
 
