@@ -73,7 +73,11 @@ class Tag
 					$tmp = ($key . "=" . $value);
 			}
 		}
-		$this->to_str = $this->to_str . " " .$tmp . ">" ;
+		if ($tmp != '')
+		{
+			$tmp =  " " . $tmp;
+		}
+		$this->to_str = $this->to_str . $tmp . ">" ;
 		$len2 =  count($this->body);
 		for ($i =0; $i < $len2; $i++){	
 			if (!$this->body[$i][0])
