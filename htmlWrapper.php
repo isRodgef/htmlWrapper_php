@@ -14,6 +14,7 @@
  #$html->add_attr(array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"));
  #$html->add_body('asd',false);
  $head->add_body('asd',false);
+ $head->commit();
  $html->add_body($head,true);
 # $head->commit();
  $html->commit();
