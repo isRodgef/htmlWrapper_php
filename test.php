@@ -26,6 +26,11 @@ require("tag.php");
 
 $var = new tag("p",true);
 $val = new tag("input",true);
+$val2 = new tag("div",true);
+
+$val2->commit();
+
+
 $val->add_attr(array("type"=>"password"));
 $val->add_body("Loser");
 $val->commit();
@@ -33,15 +38,20 @@ $val->commit();
 echo "\n";
 $val->rm_attr(array("type"=>"password"));
 $val->commit();
-//echo $val->display();
+echo $val->display();
 
 $var->add_body("lalal");
 $var->commit();
 $val->add_body($var,true);
+$val->add_attr($val2,true);
 $val->commit();
+
+
 echo "\n";
-echo $val->display();
+#echo $val->display();
 //echo $var->display();
+
+
 
 ?>
 
