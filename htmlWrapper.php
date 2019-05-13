@@ -16,11 +16,18 @@
  $head->add_body('asd',false);
  $head->commit();
  $html->add_body($head,true);
-# $head->commit();
+ 
+
+ $body->commit();
+ 
+ 
+ $html->add_body($body,true);  
  $html->commit();
 
 
   ###commit function not appending >
+
+
 
 
  #echo $head->display();
