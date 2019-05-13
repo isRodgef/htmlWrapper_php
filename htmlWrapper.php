@@ -5,6 +5,8 @@
  define("NEWLINE", "<br>" ); 
  define("NO_INFO","no extra") ; 
  define("DOCTYPE","<!DOCTYPE html>");
+ define("AMPERSAND","&amp");
+ define("LT","&lt");
 
 
  $html = new Tag('html',true);
