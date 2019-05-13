@@ -7,6 +7,7 @@
  define("DOCTYPE","<!DOCTYPE html>");
  define("AMPERSAND","&amp");
  define("LT","&lt");
+ define("GT","&gt");
 
 
  $html = new Tag('html',true);
